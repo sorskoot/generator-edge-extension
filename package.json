@@ -17,10 +17,12 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^1.0.0"
+    "yeoman-generator": "^1.1.1",
+    "mkdirp": "^0.5.1",
+    "underscore.string": "^3.3.4"
   },
   "author": "Sorskoot",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/sorskoot/generator-edge-extension/issues"
   },

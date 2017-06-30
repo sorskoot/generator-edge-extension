@@ -1,0 +1,18 @@
+{
+	"author" : "<%= AUTHOR_NAME %>",
+	"description" : "<%= EXTENSION_DESCRIPTION %>",
+	"name" : "<%= EXTENSION_NAME %>",
+	"version" : "1.0",
+	"icons" : {
+		"48" : "icons/icon-48.png"
+	},
+	"permissions" : [
+		"*://*/*"
+	],
+
+	"content_scripts" : [{
+			"js" : ["scripts/content.js"],
+			"matches" : ["*://*/*"]
+		}
+	]
+}

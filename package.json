@@ -1,0 +1,28 @@
+{
+  "name": "generator-edge-extension",
+  "version": "1.0.0",
+  "description": "Scaffold out an Edge extension http://yeoman.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorskoot/generator-edge-extension.git"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.0.0"
+  },
+  "author": "Sorskoot",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/sorskoot/generator-edge-extension/issues"
+  },
+  "homepage": "https://github.com/sorskoot/generator-edge-extension#readme"
+}

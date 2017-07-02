@@ -1,14 +1,34 @@
 var Generator = require('yeoman-generator');
 var fs = require('fs');
+var inquirer = require('inquirer');
+//var edgeManifest = require('./manifest');
 
 module.exports = class extends Generator {
-    // method1() {
-    //   this.log('method 1 just ran--' + this.sourceRoot());
-    // }
+    prompting() {
+        var prompts = [
+            {
+                name: 'name',
+                message: 'What would you like to call this extension?',
+                default: (this.appname) ? this.appname : 'myEdgeApp'
+            }, {
+                name: 'description',
+                message: 'How would you like to describe this extension?',
+                default: 'My Edge Extension'
+            }, {
+                name: 'authorName',
+                message: 'What is your name?',
+                default: 'AppAuthor'
+            }
+        ];
 
-    // method2() {
-    //   this.log('method 2 just ran');
-    // }
+        return this.prompt(prompts).then(function(answers) {
+            this.options = {
+                authorName: answers.authorName,
+                extensionName: answers.name,
+                extensionDesc: answers.description
+            }
+        }.bind(this));
+    }
 
     writing() {
         this.fs.copy(
@@ -23,9 +43,9 @@ module.exports = class extends Generator {
             this.templatePath('manifest.json'),
             this.destinationPath('manifest.json'),
             {
-                AUTHOR_NAME: 'Author',
-                EXTENSION_DESCRIPTION: 'An Edge Extension made with Yeoman',
-                EXTENSION_NAME: 'EdgeExtension'
+                AUTHOR_NAME: this.options.authorName,
+                EXTENSION_DESCRIPTION: this.options.extensionDesc,
+                EXTENSION_NAME: this.options.extensionName
             }
         );
     }
